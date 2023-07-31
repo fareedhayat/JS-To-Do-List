@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs") %>
+
+<% const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+const d = new Date();
+let name = month[d.getMonth()];
+%>
+
+
+<h2 class="box1"><%= name + " " + new Date().getDate() + ", " + new Date().getFullYear() %></h2>
+
+<div class="box">
+        <ul>
+            <% for (let i = 0; i < additionArray.length; i++) { %>
+                <li class="checker"><input type="checkbox" class="check"><label class="checkOn"><%= additionArray[i] %></label></li>
+            <% } %>
+        </ul>
+
+<form action="/submitT" method="POST">
+    <input type="text" id="workToDo" name="workToDo">
+    <button type="submit" class="round-btn">
+    <span class="add-sign">+</span>
+</form>
+</div>
+                
+<%- include("partials/footer.ejs") %>

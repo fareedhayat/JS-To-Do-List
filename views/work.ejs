@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") %>
+
+<div class="box">
+<ul>
+    <% for (let i = 0; i < additionArray.length; i++) { %>
+      <li class="checker"><input type="checkbox" class="check"><label class="checkOn"><%= additionArray[i] %></label></li>
+    <% } %>
+</ul>
+
+<form action="/submitW" method="POST">
+    <input type="text" id="workToDo" name="workToDo">
+    <button type="submit" class="round-btn">
+    <span class="add-sign">+</span>
+</form>
+</div>
+
+<%- include("partials/footer.ejs") %>
